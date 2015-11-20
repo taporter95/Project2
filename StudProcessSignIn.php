@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-strtoupper($_POST["firstN"]);
-strtoupper($_POST["lastN"]);
+$first = strtoupper($_POST["firstN"]);
+$last = strtoupper($_POST["lastN"]);
 $_SESSION["studID"] = strtoupper($_POST["studID"]);
-$_POST["email"];
-$_POST["major"];
+$email = $_POST["email"];
+$major = $_POST["major"];
 
 header('Location: 02StudHome.php');
 ?>

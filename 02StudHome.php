@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+$debug = false;
+include('../CommonMethods.php');
+$COMMON = new Common($debug);
+
 $studid = $_SESSION["studID"];
 
 //get information on student
@@ -28,9 +32,9 @@ $row = mysql_fetch_row($rs);
              
 		<form action="StudProcessHome.php" method="post" name="Home">
 	    <?php
-			$debug = false;
-			include('../CommonMethods.php');
-			$COMMON = new Common($debug);
+			//$debug = false;
+			//include('../CommonMethods.php');
+			//$COMMON = new Common($debug);
 			
 			$_SESSION["studExist"] = false;
 			$adminCancel = false;

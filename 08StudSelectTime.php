@@ -1,6 +1,8 @@
 <?php
 session_start();
 $debug = false;
+include('../CommonMethods.php');
+$COMMON = new Common($debug);
 
 if(isset($_POST["advisor"])){
 	$_SESSION["advisor"] = $_POST["advisor"];
@@ -14,8 +16,8 @@ $row2 = mysql_fetch_row($rs);
 $localAdvisor = $_SESSION["advisor"];
 $localMaj = $row2[5];
 
-include('../CommonMethods.php');
-$COMMON = new Common($debug);
+//include('../CommonMethods.php');
+//$COMMON = new Common($debug);
 
 $sql = "select * from Proj2Advisors where `id` = '$localAdvisor'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
