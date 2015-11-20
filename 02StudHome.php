@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+$studid = $_SESSION["studID"];
+
+//get information on student
+$sql = "select * from Proj2Students where `StudentID` = '$studid'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
 ?>
 
 <html lang="en">
@@ -14,7 +21,7 @@ session_start();
         <div class="top">
 		<h2>Hello 
 		<?php
-			echo $_SESSION["firstN"];
+			echo $row[1];
 		?>
         </h2>
 	    <div class="selections">
@@ -28,13 +35,7 @@ session_start();
 			$_SESSION["studExist"] = false;
 			$adminCancel = false;
 			$noApp = false;
-			$studid = $_SESSION["studID"];
 
-                        //get information on student
-                        $sql = "select * from Proj2Students where `StudentID` = '$studid'";
-			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-			$row = mysql_fetch_row($rs);
-                        //
 			if (!empty($row)){
 				$_SESSION["studExist"] = true;
 				if($row[6] == 'C'){

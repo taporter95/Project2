@@ -4,10 +4,15 @@ $debug = false;
 
 if(isset($_POST["advisor"])){
 	$_SESSION["advisor"] = $_POST["advisor"];
+
+$studid = $_SESSION["studID"];
+$sql = "select * from Proj2Students where `StudentID` = '$studid'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row2 = mysql_fetch_row($rs);
 }
 
 $localAdvisor = $_SESSION["advisor"];
-$localMaj = $_SESSION["major"];
+$localMaj = $row2[5];
 
 include('../CommonMethods.php');
 $COMMON = new Common($debug);

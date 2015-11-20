@@ -6,6 +6,8 @@ $_SESSION["appTime"] = $_POST["appTime"]; // radio button selection from previou
 if (!isset($_SESSION["advisor"]) && isset($_POST["advisor"])){
 	$_SESSION["advisor"] = $_POST["advisor"];
 }
+
+$studid = $_SESSION["studID"];
 ?>
 
 <html lang="en">
@@ -25,12 +27,12 @@ if (!isset($_SESSION["advisor"]) && isset($_POST["advisor"])){
 			include('../CommonMethods.php');
 			$COMMON = new Common($debug);
 			
-			$firstn = $_SESSION["firstN"];
+			/*$firstn = $_SESSION["firstN"];
 			$lastn = $_SESSION["lastN"];
 			$studid = $_SESSION["studID"];
 			$major = $_SESSION["major"];
 			$email = $_SESSION["email"];
-			
+			*/
 			//If the appointent is getting reschedule
 			if($_SESSION["resch"] == true){
 				//get old appointment
