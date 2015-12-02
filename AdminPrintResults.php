@@ -30,15 +30,23 @@ $debug = false;
 	$COMMON = new Common($debug);
 
 
-      $User = $_SESSION["UserN"];
+      //$User = $_SESSION["UserN"];
 
-      $sql = "SELECT `id`, `firstName`, `lastName` FROM `Proj2Advisors` WHERE `Username` = '$User'";
-      $rs = $COMMON->executeQuery($sql, "Advising Appointments");
-      $row = mysql_fetch_row($rs);
-      $id = $row[0];
-      $FirstName = $row[1];
-      $LastName = $row[2];
-		
+      //$sql = "SELECT `id`, `firstName`, `lastName` FROM `Proj2Advisors` WHERE `Username` = '$User'";
+      //$rs = $COMMON->executeQuery($sql, "Advising Appointments");
+      //$row = mysql_fetch_row($rs);
+      //$id = $row[0];
+      //$FirstName = $row[1];
+      //$LastName = $row[2];
+	  	$id = $_SESSION["ID"];
+
+	  	$sql = "SELECT `firstName`, `lastName` FROM `Proj2Advisors` WHERE `id` = '$id'";
+	  	$rs = COMMON->executeQuery($sql, "Advising Appointments");
+	  	$row = mysql_fetch_row($rs);
+
+	  	$FirstName = $row[0];
+	  	$LastName = $row[1];
+	  	
 			echo("<h2>Schedule for $FirstName $LastName<br>$date</h2>");
       $date = date('Y-m-d', strtotime($date));
 	
