@@ -24,7 +24,8 @@ $COMMON = new Common($debug);
                         $sql = "select * from Proj2Advisors";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 			while($row = mysql_fetch_row($rs)){
-				echo "<label for='",$row[0],"'><input id='",$row[0],"' type='radio' name='advisor' required value='", $row[0],"'>", $row[1]," ", $row[2],"</label><br>";
+				echo "<label for='",$row[0],"'><input id='",$row[0],"' type='radio' name='advisor' required value='", $row[0],"'>", $row[1]," ", $row[2],"<br>";
+				echo "Appointment Location: ",$row[5],"</label>";
 			}
 		?>
         </div>
