@@ -46,8 +46,8 @@
         echo("<h3>Advisor $first $last already exists</h3>");
       }
       else{
-  			$sql = "INSERT INTO `Proj2Advisors`(`FirstName`, `LastName`, `Username`, `Password`, `Location`, `Office`) 
-  			VALUES ('$first', '$last', '$user', '$pass', '$Location', '$Office')";
+  			$sql = "INSERT INTO `Proj2Advisors`(`FirstName`, `LastName`, `Office`, `Username`, `Password`, `Location`) 
+  			VALUES ('$first', '$last', '$Office', '$user', '$pass', '$Location')";
         echo ("<h3>$first $last<h3>");
         $rs = $Common->executeQuery($sql, "Advising Appointments");
       }
