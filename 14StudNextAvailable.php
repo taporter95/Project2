@@ -47,9 +47,9 @@ $major = $_SESSION["major"];
 				?>
 				</form>
 				</div>
-				<form method="link" action="02StudHome.php">
-					<input type="submit" name="home" class="button large" value="Cancle">
-				</form>
+				<?php
+					include("footer.html");
+				?>
 				</div>
 			</div>
 		</div>

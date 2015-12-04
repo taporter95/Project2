@@ -104,6 +104,9 @@ while($row = mysql_fetch_row($rs)){
 			<div class="nextButton">
 				<input type="submit" name="save" class="button large go" value="Save">
 			</div>
+			<?php
+				include("footer.html");
+			?>
 			</div>
 		</form>
   </body>

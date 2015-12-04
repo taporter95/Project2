@@ -33,11 +33,10 @@ session_start();
 			}
 		?>
         </div>
-		<form action="02StudHome.php" method="post" name="complete">
-	    <div class="returnButton">
-			<input type="submit" name="return" class="button large go" value="Return to Home">
-	    </div>
+        <?php
+        	include("footer.html");
+        ?>
 		</div>
-		</form>
+		
   </body>
 </html>

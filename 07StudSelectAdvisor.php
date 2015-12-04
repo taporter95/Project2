@@ -33,11 +33,9 @@ $COMMON = new Common($debug);
 	    </div>
 		</div>
 		</form>
-		<div>
-		<!-- home button -->
-		<form method="link" action="02StudHome.php">
-		<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
+		<?php
+			include("footer.html");
+		?>
 		</div>
   </body>
 </html>

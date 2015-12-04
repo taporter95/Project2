@@ -29,11 +29,8 @@ session_start();
 
 <br>
 <br>
-		<div>
-        
-		<form method="link" action="02StudHome.php">
-		<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
-		</div>
+	<?php
+		include("footer.html")
+	?>
   </body>
 </html>
