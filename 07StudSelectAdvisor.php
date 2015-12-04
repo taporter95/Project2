@@ -33,9 +33,7 @@ $COMMON = new Common($debug);
 	    </div>
 		</div>
 		</form>
+		</div>
 		<?php
 			include("footer.html");
 		?>
-		</div>
-  </body>
-</html>

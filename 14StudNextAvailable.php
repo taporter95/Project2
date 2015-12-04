@@ -47,11 +47,9 @@ $major = $_SESSION["major"];
 				?>
 				</form>
 				</div>
-				<?php
-					include("footer.html");
-				?>
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+		<?php
+			include("footer.php");
+		?>

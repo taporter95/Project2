@@ -15,10 +15,7 @@ session_start();
 	    <div class="statusMessage">
 		Someone JUST took that appointment before you. Please find another available appointment.
         </div>
-        <?php
-          include("footer.html");
-        ?>
 		</div>
-		
-  </body>
-</html>
+		<?php
+      include("footer.html");
+    ?>

@@ -144,15 +144,13 @@ $COMMON = new Common($debug);
 			?>
 			</label>
         </div>
-        <?php
-        	include("footer.html");
-        ?>
 		</div>
 		<div class="bottom">
 		<p>If the Major category is followed by a blank, then it is open for all majors.</p>
 		</div>
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
 
 <?php
 

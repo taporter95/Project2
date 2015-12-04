@@ -74,7 +74,6 @@ $COMMON = new Common($debug);
 	    	include("footer.html");
 	    ?>
 		</div>
-		</form>
-
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>

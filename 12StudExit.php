@@ -33,10 +33,7 @@ session_start();
 			}
 		?>
         </div>
-        <?php
-        	include("footer.html");
-        ?>
 		</div>
-		
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
