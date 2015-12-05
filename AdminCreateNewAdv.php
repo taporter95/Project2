@@ -30,6 +30,14 @@ session_start();
       <div id="form">
         <div class="top">
 		<h2>Create New Advisor Account</h2>
+
+	<?php
+		//AdminProcessCreateNew.php will redirect back here if password and confirm password do not match
+      if($_SESSION["PassCon"] == true){
+        echo "<h3 style='color:red'>Passwords do not match!!</h3>";
+      }
+    	?>
+
     	<!--get values here,
     		password will be checked in AdminProcessCreateNew.php,
     		data will be entered into db in AdminCreateNew.php-->
