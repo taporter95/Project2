@@ -23,16 +23,16 @@ $_SESSION["PassCon"] = false;
 	<h2> Hello 
 	<?php
 
-	if(!isset($_SESSION["ID"])) // someone landed this page by accident
+	if(!isset($_SESSION["UserN"])) // someone landed this page by accident
 	{
 		return;
 	}		
         //Get current user from db 
-		//$User = $_SESSION["UserN"];
-		//$Pass = $_SESSION["PassW"];
-		$id = $_SESSION["ID"];
+		$User = $_SESSION["UserN"];
+		$Pass = $_SESSION["PassW"];
 		$sql = "SELECT `firstName` FROM `Proj2Advisors` 
-			WHERE `id` = $id";
+			WHERE `Username` = '$User' 
+			and `Password` = '$Pass'";
 
 		$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 		$row = mysql_fetch_row($rs);
@@ -61,7 +61,7 @@ $_SESSION["PassCon"] = false;
         </div>
 	</div>
 
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
 
 </body>
   
