@@ -76,3 +76,4 @@ $advisorName = $row[1]." ".$row[2];
 		<?php
 			include("footer.html");
 		?>
+		</html>

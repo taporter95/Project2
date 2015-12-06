@@ -19,3 +19,4 @@ session_start();
 		<?php
       include("footer.html");
     ?>
+    </html>

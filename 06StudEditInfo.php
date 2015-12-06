@@ -109,3 +109,4 @@ while($row = mysql_fetch_row($rs)){
 		<?php
 			include("footer.html");
 		?>
+		</html>

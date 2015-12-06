@@ -151,6 +151,7 @@ $COMMON = new Common($debug);
 		<?php
 			include("footer.html");
 		?>
+		</html>
 
 <?php
 
