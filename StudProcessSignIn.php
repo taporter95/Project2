@@ -6,11 +6,13 @@ $COMMON = new Common($debug);
 
 $first = strtoupper($_POST["firstN"]);
 $last = strtoupper($_POST["lastN"]);
-$_SESSION["studID"] = strtoupper($_POST["studID"]);
+$studID = strtoupper($_POST["studID"]);
 $email = $_POST["email"];
 $major = $_POST["major"];
 
-$sql = INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ($first, $last, $_SESSION["studID"], $email, $major);
-$rs = $COMMON->executeQuery($sql, "new user");
+$_SESSION["studID"] = $studID;
+
+$sql = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ('$first', '$last', '$studID', '$email', '$major')";
+$rs = $COMMON->executeQuery($sql, "Advising Appointments");
 header('Location: 02StudHome.php');
 ?>
