@@ -81,13 +81,13 @@ $COMMON = new Common($debug);
           }
           
           //get advisor id
-          //$User = $_SESSION["UserN"];
-          //$Pass = $_SESSION["PassW"];
-          //$sql = "select `id` from `Proj2Advisors` where `Username` = '$User' and `Password` = '$Pass'";
-          //$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-          //$row = mysql_fetch_row($rs);
-          //$id = $row[0];
-          $id = $_SESSION["ID"];
+          $User = $_SESSION["UserN"];
+          $Pass = $_SESSION["PassW"];
+          $sql = "select `id` from `Proj2Advisors` where `Username` = '$User' and `Password` = '$Pass'";
+          $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+          $row = mysql_fetch_row($rs);
+          $id = $row[0];
+          
           //make sure app doesn't exist
           //insert new app to DB
           //print app
@@ -108,9 +108,7 @@ $COMMON = new Common($debug);
           }
         ?>
         <br>
-        <form method="link" action="AdminUI.php">
-          <input type="submit" name="next" class="button large go" value="Return to Home">
-        </form>
+        <?php include('AdminFooter.html'); ?>
       </div>
       <div class="bottom">
         <p><span style="color:red">!!</span> indicates that this appointment already exists. A repeat appointment was not made.</p>
