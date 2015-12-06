@@ -50,7 +50,7 @@ $major = $_SESSION["major"];
 				</div>
 			</div>
 		<?php
-			include("footer.html");
+			include("footer.php");
 		?>
 		</div>
 		</html>
