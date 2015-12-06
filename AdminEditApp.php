@@ -29,9 +29,7 @@ session_start();
 	<br>
 	<br>
 	<!-- home button -->
-	<form method="link" action="AdminUI.php">
-	<input type="submit" name="next" class="button large go" value="Return to Home">
-	</form>
+	<?php include('AdminFooter.html'); ?>
          
         </div>
 	</div>
