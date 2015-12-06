@@ -25,9 +25,8 @@ session_start();
         </div>
 	</div>
 		</form>
-		<form method="link" action="AdminUI.php">
-		<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
+
+		<?php include('AdminCancelFooter.html'); ?>
    	</div>
 	</div>
 
