@@ -26,7 +26,8 @@
 			$last = $_SESSION["AdvL"];
 			$user = $_SESSION["AdvUN"];
 			$pass = $_SESSION["AdvPW"];
-      $Office = $_SESSION["AdvOL"];
+     			$Office = $_SESSION["AdvOL"];
+			$appoint = $_SESSION["AppLoc"];
 
 			include('../CommonMethods.php');
 			$debug = false;
@@ -35,19 +36,20 @@
       $sql = "SELECT * FROM `Proj2Advisors` WHERE `Username` = '$user' AND `FirstName` = '$first' AND  `LastName` = '$last'";
       $rs = $Common->executeQuery($sql, "Advising Appointments");
       $row = mysql_fetch_row($rs);
+
       if($row){
         echo("<h3>Advisor $first $last already exists</h3>");
       }
+
       else{
-  			$sql = "INSERT INTO `Proj2Advisors`(`FirstName`, `LastName`, `OfficeLocation`, `Username`, `Password`) 
-  			VALUES ('$first', '$last', '$Office', '$user', '$pass')";
-        echo ("<h3>$first $last<h3>");
-        $rs = $Common->executeQuery($sql, "Advising Appointments");
+  		$sql = "INSERT INTO `Proj2Advisors`(`FirstName`, `LastName`, `OfficeLocation`, `Username`, `Password`, `Location`) 
+  		VALUES ('$first', '$last', '$Office', '$user', '$pass', '$appoint')";
+        	echo ("<h3>$first $last<h3>");
+        	$rs = $Common->executeQuery($sql, "Advising Appointments");
       }
 		?>
-		<form method="link" action="AdminUI.php">
-			<input type="submit" name="next" class="button large go" value="Return to Home">
-		</form>
+
+		<?php include('AdminFooter.html'); ?>
 	</div>
 	</div>
 	</div>

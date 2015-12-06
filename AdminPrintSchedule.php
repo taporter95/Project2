@@ -43,12 +43,10 @@ session_start();
     			<input type="submit" name="next" class="button large go" value="Next">
         </form>
         <!-- home button -->
-        <form method='link' action='AdminUI.php'>
-          <input type='submit' name='home' class='button large' value='Cancle'>
-        </form>
+        <?php include('AdminCancelFooter.html'); ?>
 	</div>
 	</div>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
 
   </body>
 </html>

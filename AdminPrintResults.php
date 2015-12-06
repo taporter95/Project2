@@ -52,16 +52,16 @@ $debug = false;
 	else { echo("Selection invalid"); }
 
 ?>
-	<form method="link" action="AdminUI.php">
-	<!-- home button -->
-	<input type="submit" name="next" class="button large go" value="Return to Home">
+	<?php include('AdminFooter.html'); ?>
+
 	<!-- actuall print button -->
+	<form>
 	<input type="button" name="print" class="button large go" value="Print" onClick="window.print()">
 	</form>
 
 	</div>
 	</div>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
 	</div>
 
   </body>

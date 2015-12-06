@@ -77,24 +77,18 @@ $_SESSION["Delete"] = false;
               echo("<input style=\"margin-left: 10px\" type=\"submit\" name=\"next\" class=\"button large go\" value=\"Edit Appointment\">");
               echo("</div>");
 			  echo("</form>");
-			  echo("<form method=\"link\" action=\"AdminUI.php\">");
-          //home button (cancle)
-              echo("<input type=\"submit\" name=\"next\" class=\"button large\" value=\"Cancel\">");
-              echo("</form>");
+			 include('AdminCancelFooter.html');
             }
             else{
               echo("<br><b>There are currently no group appointments scheduled at the current moment.</b>");
               echo("<br><br>");
-              echo("<form method=\"link\" action=\"AdminUI.php\">");
-              //return home button
-              echo("<input type=\"submit\" name=\"next\" class=\"button large go\" value=\"Return to Home\">");
-              echo("</form>");
+              include('AdminFooter.html');
             }
           ?>
   </div>
   </div>
   </div>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
   </div>
   </body>
   

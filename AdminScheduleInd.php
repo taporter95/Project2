@@ -85,10 +85,9 @@ session_start();
 	</div>
 	</div>
 	</form>
-	<form method="link" action="AdminUI.php" name="home">
-		<input type="submit" name="next" class="button large go" value="Return to Home">
-	</form>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('AdminFooter.html'); ?>
+
+	<?php include('../workOrder/workButton.php'); ?>
 
   </body>
   
