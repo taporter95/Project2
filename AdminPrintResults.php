@@ -30,23 +30,15 @@ $debug = false;
 	$COMMON = new Common($debug);
 
 
-      //$User = $_SESSION["UserN"];
+      $User = $_SESSION["UserN"];
 
-      //$sql = "SELECT `id`, `firstName`, `lastName` FROM `Proj2Advisors` WHERE `Username` = '$User'";
-      //$rs = $COMMON->executeQuery($sql, "Advising Appointments");
-      //$row = mysql_fetch_row($rs);
-      //$id = $row[0];
-      //$FirstName = $row[1];
-      //$LastName = $row[2];
-	  	$id = $_SESSION["ID"];
-
-	  	$sql = "SELECT `firstName`, `lastName` FROM `Proj2Advisors` WHERE `id` = '$id'";
-	  	$rs = COMMON->executeQuery($sql, "Advising Appointments");
-	  	$row = mysql_fetch_row($rs);
-
-	  	$FirstName = $row[0];
-	  	$LastName = $row[1];
-	  	
+      $sql = "SELECT `id`, `firstName`, `lastName` FROM `Proj2Advisors` WHERE `Username` = '$User'";
+      $rs = $COMMON->executeQuery($sql, "Advising Appointments");
+      $row = mysql_fetch_row($rs);
+      $id = $row[0];
+      $FirstName = $row[1];
+      $LastName = $row[2];
+		
 			echo("<h2>Schedule for $FirstName $LastName<br>$date</h2>");
       $date = date('Y-m-d', strtotime($date));
 	
@@ -60,16 +52,16 @@ $debug = false;
 	else { echo("Selection invalid"); }
 
 ?>
-	<form method="link" action="AdminUI.php">
-	<!-- home button -->
-	<input type="submit" name="next" class="button large go" value="Return to Home">
+	<?php include('AdminFooter.html'); ?>
+
 	<!-- actuall print button -->
+	<form>
 	<input type="button" name="print" class="button large go" value="Print" onClick="window.print()">
 	</form>
 
 	</div>
 	</div>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
 	</div>
 
   </body>
