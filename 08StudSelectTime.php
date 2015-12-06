@@ -69,14 +69,11 @@ $advisorName = $row[1]." ".$row[2];
 			<input type="submit" name="next" class="button large go" value="Next">
 	    </div>
 		</form>
-		<div>
-		<form method="link" action="02StudHome.php">
-		<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
-		</div>
 		<div class="bottom">
 		<p>Note: Appointments are maximum 30 minutes long.</p>
 		<p style="color:red">If there are no more open appointments, contact your advisor or click <a href='02StudHome.php'>here</a> to start over.</p>
 		</div>
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
+		</html>

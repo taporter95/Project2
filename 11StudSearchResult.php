@@ -144,17 +144,14 @@ $COMMON = new Common($debug);
 			?>
 			</label>
         </div>
-		<form action="02StudHome.php" method="link">
-	    <div class="nextButton">
-			<input type="submit" name="done" class="button large go" value="Done">
-	    </div>
-		</form>
 		</div>
 		<div class="bottom">
 		<p>If the Major category is followed by a blank, then it is open for all majors.</p>
 		</div>
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
+		</html>
 
 <?php
 

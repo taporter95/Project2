@@ -54,10 +54,7 @@ $studID = $_SESSION["studID"];
 			}
 		?>
         </div>
-	    <div class="finishButton">
-			<button onclick="location.href = '02StudHome.php'" class="button large go" >Return to Home</button>
-	    </div>
-		</div>
-		</form>
-  </body>
-</html>
+        <?php
+        	include("footer.html");
+        ?>
+        </html>
