@@ -70,13 +70,8 @@ $COMMON = new Common($debug);
 	    	</div>
 	    </form>
 
-		<form action="02StudHome.php" method="post" name="complete">
-	    <div class="returnButton">
-		<!-- go back to home page link-->	
-                <input type="submit" name="return" class="button large go" value="Return to Home">
-	    </div>
 		</div>
-		</form>
-
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
+		</html>

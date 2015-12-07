@@ -7,6 +7,11 @@ session_start();
 $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
+
+$studid = $_SESSION["studID"];
+$sql = "select * from Proj2Students where `StudentID` = '$studid'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row3 = mysql_fetch_row($rs);
 ?>
 
 <html lang="en">
@@ -60,11 +65,11 @@ $COMMON = new Common($debug);
 				<?php
 				if(empty($times)){
 					if($advisor == 'I'){
-						$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `AdvisorID` != 0 and `EnrolledNum` = 0 and `Major` like '%".$_SESSION['major']."%' order by `Time` ASC Limit 30";
+						$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `AdvisorID` != 0 and `EnrolledNum` = 0 and `Major` like '%".$row3[5]."%' order by `Time` ASC Limit 30";
 						$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 					}
 					else{
-						$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `AdvisorID` like '%$advisor%' and `EnrolledNum` = 0 and `Major` like '%".$_SESSION['major']."%' order by `Time` ASC Limit 30";
+						$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `AdvisorID` like '%$advisor%' and `EnrolledNum` = 0 and `Major` like '%".$row3[5]."%' order by `Time` ASC Limit 30";
 						$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 					}
 					$row = mysql_fetch_row($rs);
@@ -90,7 +95,7 @@ $COMMON = new Common($debug);
 				else{
 					if($advisor == 'I'){
 						foreach($times as $t){
-							$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `Time` like '%$t%' and `AdvisorID` != 0 and `EnrolledNum` = 0 and `Major` like '%".$_SESSION['major']."%' order by `Time` ASC Limit 30";
+							$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `Time` like '%$t%' and `AdvisorID` != 0 and `EnrolledNum` = 0 and `Major` like '%".$row3[5]."%' order by `Time` ASC Limit 30";
 							$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 							$row = mysql_fetch_row($rs);
 							$rsA = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
@@ -111,7 +116,7 @@ $COMMON = new Common($debug);
 					}
 					else{
 						foreach($times as $t){
-							$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `Time` like '%$t%' and `AdvisorID` like '%$advisor%' and `EnrolledNum` = 0 and `Major` like '%".$_SESSION['major']."%' order by `Time` ASC Limit 30";
+							$sql = "select * from Proj2Appointments where `Time` like '%$date%' and `Time` > '".date('Y-m-d H:i:s')."' and `Time` like '%$t%' and `AdvisorID` like '%$advisor%' and `EnrolledNum` = 0 and `Major` like '%".$row3[5]."%' order by `Time` ASC Limit 30";
 							$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 							$row = mysql_fetch_row($rs);
 							if($row){
@@ -144,17 +149,14 @@ $COMMON = new Common($debug);
 			?>
 			</label>
         </div>
-		<form action="02StudHome.php" method="link">
-	    <div class="nextButton">
-			<input type="submit" name="done" class="button large go" value="Done">
-	    </div>
-		</form>
 		</div>
 		<div class="bottom">
 		<p>If the Major category is followed by a blank, then it is open for all majors.</p>
 		</div>
-  </body>
-</html>
+		<?php
+			include("footer.html");
+		?>
+		</html>
 
 <?php
 

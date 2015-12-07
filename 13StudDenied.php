@@ -15,11 +15,8 @@ session_start();
 	    <div class="statusMessage">
 		Someone JUST took that appointment before you. Please find another available appointment.
         </div>
-		<form action="02StudHome.php" method="post" name="complete">
-	    <div class="returnButton">
-			<input type="submit" name="return" class="button large go" value="Return to Home">
-	    </div>
 		</div>
-		</form>
-  </body>
-</html>
+		<?php
+      include("footer.html");
+    ?>
+    </html>
