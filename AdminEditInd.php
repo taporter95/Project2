@@ -116,9 +116,7 @@ session_start();
               echo("<br><b>There are currently no individual appointments scheduled at the current moment.</b>");
               echo("<br><br>");
 			  echo("</td</tr>");
-              echo("<form method=\"link\" action=\"AdminUI.php\">");
-              echo("<input type=\"submit\" name=\"next\" class=\"button large go\" value=\"Return to Home\">");
-              echo("</form>");
+              include('AdminFooter.html');
             }
           ?>
 		  
@@ -128,7 +126,7 @@ session_start();
 		<p style='color:red'>Please note that individual appointments can only be removed from schedule.</p>
 	</div>
 	</div>
-	<?php include('./workOrder/workButton.php'); ?>
+	<?php include('../workOrder/workButton.php'); ?>
 
 	</div>
   </body>
