@@ -127,9 +127,8 @@ $debug = false;
             $rs = $COMMON->executeQuery($sql, "Advising Appointments"); 
 
             echo("<br><br>");
-            echo("<form method=\"link\" action=\"AdminUI.php\">");
-            echo("<input type=\"submit\" name=\"next\" class=\"button large go\" value=\"Return to Home\">");
-            echo("</form>");
+            include('AdminFooter.html');
+
           }
         ?>
 	</div>

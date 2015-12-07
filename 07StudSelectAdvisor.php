@@ -24,7 +24,8 @@ $COMMON = new Common($debug);
                         $sql = "select * from Proj2Advisors";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 			while($row = mysql_fetch_row($rs)){
-				echo "<label for='",$row[0],"'><input id='",$row[0],"' type='radio' name='advisor' required value='", $row[0],"'>", $row[1]," ", $row[2],"</label><br>";
+				echo "<label for='",$row[0],"'><input id='",$row[0],"' type='radio' name='advisor' required value='", $row[0],"'>", $row[1]," ", $row[2],"<br>";
+				echo "Appointment Location: ",$row[6],"</label>";
 			}
 		?>
         </div>
@@ -33,8 +34,11 @@ $COMMON = new Common($debug);
 	    </div>
 		</div>
 		</form>
+		<div>
+		<!-- home button -->
+		<form method="link" action="02StudHome.php">
+		<input type="submit" name="home" class="button large" value="Cancel">
+		</form>
 		</div>
-		<?php
-			include("footer.html");
-		?>
-		</html>
+  </body>
+</html>

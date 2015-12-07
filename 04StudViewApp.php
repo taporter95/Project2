@@ -36,15 +36,20 @@ $studID = $_SESSION["studID"];
 					$rs2 = $COMMON->executeQuery($sql2, $_SERVER["SCRIPT_NAME"]);
 					$row2 = mysql_fetch_row($rs2);
 					$advisorName = $row2[1] . " " . $row2[2];
-					$advisorLocation = $row2[3];
+					$advisorLocation = $row2[6];
+					$officeLocation = $row2[3];
 				}
 
-				else{$advisorName = "Group";}
+				else{
+					$advisorName = "Group";
+					$officeLocation = "No Office";
+				}
 			
 				echo "<label for='info'>";
 				echo "Advisor: ", $advisorName, "<br>";
 				echo "Appointment: ", date('l, F d, Y g:i A', $datephp), "<br>";
-				echo "Location: ", $advisorLocation, "</label>";
+				echo "Meeting Location: ", $advisorLocation, "<br>";
+				echo "Office Location: ", $officeLocation, "</label>";
 			}
 			else // something is up, and there DB table needs to be fixed
 			{
@@ -54,7 +59,10 @@ $studID = $_SESSION["studID"];
 			}
 		?>
         </div>
-        <?php
-        	include("footer.html");
-        ?>
-        </html>
+	    <div class="finishButton">
+			<button onclick="location.href = '02StudHome.php'" class="button large go" >Return to Home</button>
+	    </div>
+		</div>
+		</form>
+  </body>
+</html>

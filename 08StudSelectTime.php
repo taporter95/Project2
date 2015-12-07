@@ -1,23 +1,16 @@
 <?php
 session_start();
 $debug = false;
-include('../CommonMethods.php');
-$COMMON = new Common($debug);
 
 if(isset($_POST["advisor"])){
 	$_SESSION["advisor"] = $_POST["advisor"];
-
-$studid = $_SESSION["studID"];
-$sql = "select * from Proj2Students where `StudentID` = '$studid'";
-$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-$row2 = mysql_fetch_row($rs);
 }
 
 $localAdvisor = $_SESSION["advisor"];
-$localMaj = $row2[5];
+$localMaj = $_SESSION["major"];
 
-//include('../CommonMethods.php');
-//$COMMON = new Common($debug);
+include('../CommonMethods.php');
+$COMMON = new Common($debug);
 
 $sql = "select * from Proj2Advisors where `id` = '$localAdvisor'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
@@ -76,11 +69,14 @@ $advisorName = $row[1]." ".$row[2];
 			<input type="submit" name="next" class="button large go" value="Next">
 	    </div>
 		</form>
+		<div>
+		<form method="link" action="02StudHome.php">
+		<input type="submit" name="home" class="button large" value="Cancel">
+		</form>
+		</div>
 		<div class="bottom">
 		<p>Note: Appointments are maximum 30 minutes long.</p>
 		<p style="color:red">If there are no more open appointments, contact your advisor or click <a href='02StudHome.php'>here</a> to start over.</p>
 		</div>
-		<?php
-			include("footer.html");
-		?>
-		</html>
+  </body>
+</html>

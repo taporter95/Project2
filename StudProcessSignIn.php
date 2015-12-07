@@ -1,18 +1,11 @@
 <?php
 session_start();
-$debug = false;
-include('../CommonMethods.php');
-$COMMON = new Common($debug);
 
-$first = strtoupper($_POST["firstN"]);
-$last = strtoupper($_POST["lastN"]);
-$studID = strtoupper($_POST["studID"]);
-$email = $_POST["email"];
-$major = $_POST["major"];
+$_SESSION["firstN"] = strtoupper($_POST["firstN"]);
+$_SESSION["lastN"] = strtoupper($_POST["lastN"]);
+$_SESSION["studID"] = strtoupper($_POST["studID"]);
+$_SESSION["email"] = $_POST["email"];
+$_SESSION["major"] = $_POST["major"];
 
-$_SESSION["studID"] = $studID;
-
-$sql = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ('$first', '$last', '$studID', '$email', '$major')";
-$rs = $COMMON->executeQuery($sql, "Advising Appointments");
 header('Location: 02StudHome.php');
 ?>

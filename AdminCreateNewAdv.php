@@ -30,12 +30,14 @@ session_start();
       <div id="form">
         <div class="top">
 		<h2>Create New Advisor Account</h2>
-		<?php
+
+	<?php
 		//AdminProcessCreateNew.php will redirect back here if password and confirm password do not match
       if($_SESSION["PassCon"] == true){
         echo "<h3 style='color:red'>Passwords do not match!!</h3>";
       }
-    ?>
+    	?>
+
     	<!--get values here,
     		password will be checked in AdminProcessCreateNew.php,
     		data will be entered into db in AdminCreateNew.php-->
@@ -55,6 +57,12 @@ session_start();
 	   			<input id="OfficeLoc" size "20" maxlength="50" type="text" name="OfficeLoc" required>
 	   	</div>
 
+	   	<div class="field">
+	   			<label for="AppointLoc">Appointment Location</label>
+	   			<input id="AppointLoc" size "20" maxlength="50" type="text" name="AppointLoc" required>
+	   	</div>
+
+
 		<div class="field">
 	     		<label for="UserN">Username</label>
 	      		<input id="UserN" size="20" maxlength="50" type="text" name="UserN" required>
@@ -73,11 +81,10 @@ session_start();
 
 		<div class="nextButton">
 			<input type="submit" name="next" class="button large go" value="Submit">
-	    </div>
+	   	 </div>
 		</form>
-		<form method="link" action="AdminUI.php">
-			<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
+
+		<?php include('AdminCancelFooter.html'); ?>
 
 	</div>
 	</div>

@@ -4,12 +4,7 @@ session_start();
 $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
-
-$studid = $_SESSION["studID"];
-$sql = "select * from Proj2Students where `StudentID` = '$studid'";
-$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-$row3 = mysql_fetch_row($rs);
-$major = $row3[5];
+$major = $_SESSION["major"];
 ?>
 
 <html lang="en">
@@ -52,10 +47,11 @@ $major = $row3[5];
 				?>
 				</form>
 				</div>
+				<form method="link" action="02StudHome.php">
+					<input type="submit" name="home" class="button large" value="Cancel">
+				</form>
 				</div>
 			</div>
-		<?php
-			include("footer.html");
-		?>
 		</div>
-		</html>
+	</body>
+</html>

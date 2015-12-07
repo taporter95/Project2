@@ -1,16 +1,5 @@
 <?php
 session_start();
-
-$debug = false;
-include('../CommonMethods.php');
-$COMMON = new Common($debug);
-
-$studid = $_SESSION["studID"];
-
-//get information on student
-$sql = "select * from Proj2Students where `StudentID` = '$studid'";
-$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-$row = mysql_fetch_row($rs);
 ?>
 
 <html lang="en">
@@ -25,21 +14,27 @@ $row = mysql_fetch_row($rs);
         <div class="top">
 		<h2>Hello 
 		<?php
-			echo $row[1];
+			echo $_SESSION["firstN"];
 		?>
         </h2>
 	    <div class="selections">
              
 		<form action="StudProcessHome.php" method="post" name="Home">
 	    <?php
-			//$debug = false;
-			//include('../CommonMethods.php');
-			//$COMMON = new Common($debug);
+			$debug = false;
+			include('../CommonMethods.php');
+			$COMMON = new Common($debug);
 			
 			$_SESSION["studExist"] = false;
 			$adminCancel = false;
 			$noApp = false;
+			$studid = $_SESSION["studID"];
 
+                        //get information on student
+                        $sql = "select * from Proj2Students where `StudentID` = '$studid'";
+			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+			$row = mysql_fetch_row($rs);
+                        //
 			if (!empty($row)){
 				$_SESSION["studExist"] = true;
 				if($row[6] == 'C'){
