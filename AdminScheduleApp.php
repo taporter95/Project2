@@ -7,7 +7,7 @@ session_start();
   <head>
     <meta charset="UTF-8" />
     <title>Schedule Appointment</title>
-	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>
+	<link rel='stylesheet' type='text/css' href='./css/standard.css'/>
   </head>
   <body>
     <div id="login">
