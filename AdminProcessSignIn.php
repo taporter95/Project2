@@ -20,18 +20,19 @@ include('../CommonMethods.php');
 $debug = false;
 $Common = new Common($debug);
 
-$_SESSION["UserN"] = strtoupper($_POST["UserN"]);
-$_SESSION["PassW"] = strtoupper($_POST["PassW"]);
+//$_SESSION["UserN"] = strtoupper($_POST["UserN"]);
+//$_SESSION["PassW"] = strtoupper($_POST["PassW"]);
 $_SESSION["UserVal"] = false;
 
-$user = $_SESSION["UserN"];
-$pass = $_SESSION["PassW"];
+$user = strtoupper($_POST["UserN"]);
+$pass = strtoupper($_POST["PassW"]);
 //get data based on fields on login page
 $sql = "SELECT * FROM `Proj2Advisors` WHERE `Username` = '$user' AND `Password` = '$pass'";
 $rs = $Common->executeQuery($sql, "Advising Appointments");
 $row = mysql_fetch_row($rs);
 //if row exists
 if($row){
+	$_SESSION["ID"] = $row[0];
 	if($debug) { echo("<br>".var_dump($_SESSION)."<- Session variables above<br>"); }
 	else { header('Location: AdminUI.php'); }
 }

@@ -12,7 +12,16 @@ $major = $_POST["major"];
 
 $_SESSION["studID"] = $studID;
 
-$sql = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ('$first', '$last', '$studID', '$email', '$major')";
-$rs = $COMMON->executeQuery($sql, "Advising Appointments");
-header('Location: 02StudHome.php');
+$sql1 = "SELECT * FROM `Proj2Students` WHERE `Email` = '$email' AND `StudentID` = '$studID'";
+$rs1 = $COMMON->executeQuery($sql1, "Advising Appointments");
+$row = mysql_fetch_row($rs1);
+
+if($row){
+	header('location: 02StudHome.php');
+}
+else{
+	$sql2 = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ('$first', '$last', '$studID', '$email', '$major')";
+	$rs2 = $COMMON->executeQuery($sql2, "Advising Appointments");
+	header('Location: 02StudHome.php');
+}
 ?>
