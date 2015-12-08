@@ -20,7 +20,7 @@ if($row){
 	header('location: 02StudHome.php');
 }
 else{
-	$sql2 = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`) VALUES ('$first', '$last', '$studID', '$email', '$major')";
+	$sql2 = "INSERT INTO `Proj2Students` (`FirstName`, `LastName`, `StudentID`, `Email`, `Major`, `Status`) VALUES ('$first', '$last', '$studID', '$email', '$major', 'N')";
 	$rs2 = $COMMON->executeQuery($sql2, "Advising Appointments");
 	header('Location: 02StudHome.php');
 }
