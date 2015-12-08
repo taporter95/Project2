@@ -80,12 +80,13 @@ $COMMON = new Common($debug);
 			}
 			
 			//get advisor id
-			$User = $_SESSION["UserN"];
-			$Pass = $_SESSION["PassW"];
-			$sql = "select `id` from `Proj2Advisors` where `Username` = '$User' and `Password` = '$Pass'";
-			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-			$row = mysql_fetch_row($rs);
-			$id = $row[0];
+			//$User = $_SESSION["UserN"];
+			//$Pass = $_SESSION["PassW"];
+			//$sql = "select `id` from `Proj2Advisors` where `Username` = '$User' and `Password` = '$Pass'";
+			//$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+			//$row = mysql_fetch_row($rs);
+			//$id = $row[0];
+			$id = $_SESSION["ID"];
 			
 			//make sure app doesn't exist
 			//insert new app to DB
