@@ -17,7 +17,7 @@ $row = mysql_fetch_row($rs);
   <head>
     <meta charset="UTF-8" />
     <title>Student Advising Home</title>
-	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>
+	<link rel='stylesheet' type='text/css' href='./css/standard.css'/>
   </head>
   <body>
     <div id="login">
