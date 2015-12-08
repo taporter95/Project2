@@ -14,7 +14,7 @@ $studid = $_SESSION["studID"];
   <head>
     <meta charset="UTF-8" />
     <title>Confirm Appointment</title>
-	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>  </head>
+	<link rel='stylesheet' type='text/css' href='./css/standard.css'/>  </head>
   <body>
 	<div id="login">
       <div id="form">
