@@ -12,7 +12,7 @@ $major = $_POST["major"];
 
 $_SESSION["studID"] = $studID;
 
-$sql1 = "SELECT * FROM `Proj2Students` WHERE `Email` = '$email' AND `StudentID` = '$studID'";
+$sql1 = "SELECT * FROM `Proj2Students` WHERE `StudentID` = '$studID'";
 $rs1 = $COMMON->executeQuery($sql1, "Advising Appointments");
 $row = mysql_fetch_row($rs1);
 
