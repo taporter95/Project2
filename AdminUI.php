@@ -23,16 +23,16 @@ $_SESSION["PassCon"] = false;
 	<h2> Hello 
 	<?php
 
-	if(!isset($_SESSION["UserN"])) // someone landed this page by accident
+	if(!isset($_SESSION["ID"])) // someone landed this page by accident
 	{
 		return;
 	}		
         //Get current user from db 
-		$User = $_SESSION["UserN"];
-		$Pass = $_SESSION["PassW"];
+		//$User = $_SESSION["UserN"];
+		//$Pass = $_SESSION["PassW"];
+		$id = $_SESSION["ID"];
 		$sql = "SELECT `firstName` FROM `Proj2Advisors` 
-			WHERE `Username` = '$User' 
-			and `Password` = '$Pass'";
+			WHERE `id` = $id";
 
 		$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 		$row = mysql_fetch_row($rs);
