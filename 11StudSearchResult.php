@@ -18,7 +18,7 @@ $row3 = mysql_fetch_row($rs);
   <head>
     <meta charset="UTF-8" />
     <title>Search for Appointment</title>
-	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>
+	<link rel='stylesheet' type='text/css' href='./css/standard.css'/>
   </head>
   <body>
     <div id="login">
