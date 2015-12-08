@@ -61,7 +61,7 @@ $debug = false;
 
 	</div>
 	</div>
-	<?php include('../workOrder/workButton.php'); ?>
+	<?php include('./workOrder/workButton.php'); ?>
 	</div>
 
   </body>
