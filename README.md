@@ -1,2 +1,7 @@
 # Project2
-#test branch
+# CMSC331
+# 12/8/15
+# Authors:
+#   Tim Porter
+#   Jason DeBernard
+#   Ryan Ernst
